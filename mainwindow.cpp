@@ -206,13 +206,12 @@ void MainWindow::on_pushButton_3_clicked()
     aviso.setModal(true);
     aviso.exec();
 
-    /*
     char cmd[1024] = "";
-    strcat (cmd, "python3 /home/joao/Área\\ de\\ Trabalho/proj_so/correioeletronico.py ");
+    strcat (cmd, "python3 /home/joao/correioeletronico.py ");
     strcat (cmd, "'um arquivo/diretorio foi baixado da BeagleBone Black'");
     std::cout << cmd << "\n";
     system (cmd);
-    */
+
 }
 
 //Função ativada quando o botão de Abrir é clicado
@@ -237,12 +236,6 @@ void MainWindow::on_pushButton_2_clicked()
         listarArquivos(dirA);
         if (ui->listWidget->count() != 0) {ui->listWidget->setCurrentRow(0);}
 
-        /*
-        char cmd[1024] = "";
-        strcat (cmd, "python3 /home/joao/Área\ de\ Trabalho/proj_so/correioeletronico.py ");
-        strcat (cmd, "'um arquivo/diretorio foi enviado para a BeagleBone Black'");
-        system (cmd);
-        */
     }
 }
 
@@ -286,6 +279,11 @@ void MainWindow::on_pushButton_clicked()
     }
     listarArquivos(dirA);
     ui->listWidget->setCurrentRow(0);
+
+    char cmd[1024] = "";
+    strcat (cmd, "python3 /home/joao/correioeletronico.py ");
+    strcat (cmd, "'um arquivo/diretorio foi enviado para a BeagleBone Black'");
+    system (cmd);
 }
 
 void MainWindow::on_listWidget_doubleClicked(const QModelIndex &index)
@@ -400,12 +398,12 @@ void MainWindow::on_pushButton_5_clicked()
     ui->listWidget->setCurrentRow(0);
     if (ui->listWidget->count() != 0) {ui->listWidget->setCurrentRow(0);}
 
-    /*
+
     char cmd2[1024] = "";
-    strcat (cmd2, "python3 /home/joao/Área\ de\ Trabalho/proj_so/correioeletronico.py ");
+    strcat (cmd2, "python3 /home/joao/correioeletronico.py ");
     strcat (cmd2, "'um arquivo/diretorio foi apagado da BeagleBone Black'");
     system (cmd2);
-    */
+
 }
 
 
