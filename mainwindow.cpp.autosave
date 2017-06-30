@@ -265,7 +265,6 @@ void MainWindow::on_pushButton_clicked()
     };
 
     WindowDir w_dir(dirA, true);
-
     w_dir.setModal(true);
     w_dir.exec();
 

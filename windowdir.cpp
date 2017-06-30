@@ -176,7 +176,6 @@ void WindowDir::on_pushButton_clicked()
    strcat (comando, "root@192.168.7.2:\"'");
    strcat (comando, string2);
    strcat (comando, "'\"");
-   std::cout << comando << "\n";
    system(comando);
    this->close();
 }
