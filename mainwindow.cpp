@@ -40,8 +40,8 @@ struct TamEnd {
 void MainWindow::listarArquivos(std::string nomeDir)
 {
         QString s = nomeDir.c_str();
-        ui->dirFiles->setText(s)
-                ;
+        ui->dirFiles->setText(s);
+    
         struct sockaddr_in endereco;
         int socketId;
 
@@ -56,7 +56,7 @@ void MainWindow::listarArquivos(std::string nomeDir)
         memset(&endereco, 0, sizeof(endereco));
         endereco.sin_family = AF_INET;
         endereco.sin_port = htons(PORTNUM);
-        endereco.sin_addr.s_addr = inet_addr("192.168.7.2");
+        endereco.sin_addr.s_addr = inet_addr("192.168.7.2"); //IP da BeagleBone
         //endereco.sin_addr.s_addr = inet_addr("127.0.0.1");
 
         //Criando o Socket
@@ -91,7 +91,6 @@ void MainWindow::listarArquivos(std::string nomeDir)
         End diretorios[MAXDIR];
 
         //Servidor vai ficar esperando uma mensagem
-
         byteslidos = recv(socketId,diretorios,sizeof(diretorios),0);
 
         if (byteslidos == -1) {
